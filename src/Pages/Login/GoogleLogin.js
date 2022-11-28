@@ -2,9 +2,6 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-
-
-
 import { useState } from 'react';
 
 import toast from 'react-hot-toast';
@@ -41,23 +38,23 @@ const GoogleLogin = () => {
         event.preventDefault();
         providerLogin(googleProvider)
             .then(result => {
-                const user = result.user;
+                const users = result.users;
                 event.preventDefault();
                 toast('User Created Successfully.')
                 const currentUser = {
-                    email: user.email
+                    email: users.email
                 }
                 
-                console.log(user);
+                console.log(users);
 
 
                 toast('User Created Successfully.')
                 const userInfo = {
-                    displayName: user.name
+                    displayName: users.name
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(user.name, user.email, user);
+                        saveUser(users.name, users.email);
                     })
                     .catch(err => console.log(err));
             })
@@ -70,14 +67,14 @@ const GoogleLogin = () => {
                            })
     }
 
-    const saveUser = (name, email, role) =>{
-        const user ={name, email, role};
+    const saveUser = (name, email, user) =>{
+        const user1 ={name, email, user};
         fetch('https://assignment-hero-twelfth-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(user1)
         })
         .then(res => res.json())
         .then(data =>{
@@ -89,7 +86,7 @@ const GoogleLogin = () => {
 
     return (
         <div>
-            <button onClick={handleGoogleSignIn} className="  align-center btn btn-primary my-10 ml-0 px-40">Login with Google</button>
+            <button onClick={handleGoogleSignIn} className="btn btn-outline w-full">Sign Up with Google</button>
         </div>
     );
 };

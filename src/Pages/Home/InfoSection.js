@@ -29,7 +29,7 @@ const InfoSection = () => {
                     </div>
                     <div>
                         <h5 className="text-lg">Condition: Fair</h5>
-                        <p>price: $ 10000</p>
+                        <p>price: <br/>$10000</p>
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@ const InfoSection = () => {
                     </div>
                     <div>
                         <h5 className="text-lg">Condition: Fair</h5>
-                        <p>price: $ 20000</p>
+                        <p>price: <br/>$20000</p>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@ const InfoSection = () => {
                     </div>
                     <div>
                         <h5 className="text-lg">Condition: Good</h5>
-                        <p>price: $ 30000</p>
+                        <p>price: <br/>$30000</p>
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@ const InfoSection = () => {
                     </div>
                     <div>
                         <h5 className="text-lg">Condition: Good</h5>
-                        <p>price: $ 40000</p>
+                        <p>price: <br/>$40000</p>
                     </div>
                 </div>
             </div>

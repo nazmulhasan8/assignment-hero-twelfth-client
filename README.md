@@ -16,5 +16,5 @@ https://soft-centaur-e0a9ae.netlify.app/
 
 # Admin information:
 
-Email: admin@gmail.com
-PassWord: A$fTYTY^&&^&&^vvdh%GGHJs55hdhhsdjhG55&FGFG
+1. Email: admin@gmail.com
+2. PassWord: A$fTYTY^&&^&&^vvdh%GGHJs55hdhhsdjhG55&FGFG

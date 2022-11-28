@@ -7,7 +7,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const BookingModal2 = ({ itemValue, setItemValue, selectedDate2, refetch }) => {
 
     // treatment is just another name of appointmentOptions with name, slots, _id
-    const { _id, img, title,paid, productId, description, sellerName, location, sellerEmail, originalPrice, resalePrice, yearsOfUse, postedTime, conditionType, mobileNumber, YearOfPurchase } = itemValue;
+    const { _id, img, title,paid, productId, description, sellerName, location, sellerEmail, originalPrice, resalePrice, yearsOfUse, postedTime, conditionType, sellerMobileNumber, YearOfPurchase } = itemValue;
     console.log(_id);
     const date2 = format(selectedDate2, 'PP');
     const { user } = useContext(AuthContext);
@@ -93,15 +93,15 @@ const BookingModal2 = ({ itemValue, setItemValue, selectedDate2, refetch }) => {
                                     }
 
                 <h2 className="card-title text-3xl">{title}</h2>
-
                 <p className='text-2xl  font-semibold'>Seller Name: {sellerName}</p> 
+                <p className='text-2xl text-600 font-semibold'>Posted Time: {postedTime}</p>
+                <p className='text-2xl text-orange-600 font-semibold'>Seller Mobile Number: {sellerMobileNumber}</p>          
                 <p className='text-2xl text-orange-600 font-semibold'>Location: {location}</p>
+                
                 <p className='text-2xl text-orange-600 font-semibold'>Original Price: ${originalPrice}</p>
                 <p className='text-2xl text-orange-600 font-semibold'>Resale Price: ${resalePrice}</p>
                 <p className='text-2xl text-600 font-semibold'>Years Of Use: {yearsOfUse}</p>
-                <p className='text-2xl text-600 font-semibold'>Posted Time: {postedTime}</p>
                 <p className='text-2xl text-600 font-semibold'>Condition Type: {conditionType}</p>
-                <p className='text-2xl text-orange-600 font-semibold'>Seller Mobile Number: {mobileNumber}</p>
                 <p className='text-2xl text-orange-600 font-semibold'>Year Of Purchase: {YearOfPurchase}</p>       
                 <div className='text-left'>
                 {

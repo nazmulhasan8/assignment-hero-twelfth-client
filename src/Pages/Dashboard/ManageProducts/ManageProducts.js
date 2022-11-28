@@ -1,34 +1,24 @@
 import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import Loading from '../../Shared/Loading/Loading';
 
-
-import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../contexts/AuthProvider';
-
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
-  
 
     const [advertiseProduct, setAdvertiseProduct] = useState(null);
 
-    // const { title, img, categoryName, description, sellerName, paid, sellerEmail, location, originalPrice, resalePrice, yearsOfUse, postedTime, conditionType, sellerMobileNumber, YearOfPurchase  } = advertiseProduct;
-
-    // const { _id, img, title, categoryName, description, sellerName, paid, sellerEmail, location, originalPrice, resalePrice, yearsOfUse, postedTime, conditionType, sellerMobileNumber, YearOfPurchase  } = productValue;
-
+    
 
     const closeModal = () => {
         setDeletingProduct(null);
-        
         setAdvertiseProduct(null);
     }
 
-    // const closeModal2 = () => {
-    //     setAdvertiseProduct(null);
-    // }
+    
 
     const navigate = useNavigate();
 
@@ -65,6 +55,9 @@ console.log(manageProducts);
             }
         })
     }
+
+
+    
 
 
 
@@ -114,7 +107,7 @@ console.log(manageProducts);
                             <th>Condition Type</th>
                             <th>Price</th>
                             <th>Advertise</th>
-                            <th>Delete</th>
+                            <th>Delete Product</th>
                             <th>Sales Status</th>
                             
                         </tr>
@@ -179,9 +172,13 @@ description
                                     <label onClick={() => setAdvertiseProduct(booking)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Advertise</label>
                                    
                                 </td>
+
+
                                 <td>
                                     <label onClick={() => setDeletingProduct(booking)} htmlFor="confirmation-modal" className="btn btn-sm btn-error">Delete</label>
                                 </td>
+
+                                
                                 <td>
                                     {
                                         booking.resalePrice && !booking.paid && <Link
@@ -212,6 +209,8 @@ description
                 >
                 </ConfirmationModal>
             }
+
+
 
 
 

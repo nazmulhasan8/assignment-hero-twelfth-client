@@ -21,16 +21,16 @@ const GoogleLogin = () => {
     const [token] = useToken(createdUserEmail);
    
 
-    if(token){
-        navigate('/');
-    }
 
     const location = useLocation();
     const navigate = useNavigate();
 
+   
     const from = location.state?.from?.pathname || '/';
 
-
+    if (token) {
+        navigate(from, { replace: true });
+    }
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -38,23 +38,23 @@ const GoogleLogin = () => {
         event.preventDefault();
         providerLogin(googleProvider)
             .then(result => {
-                const users = result.users;
+                const user = result.user;
                 event.preventDefault();
                 toast('User Created Successfully.')
                 const currentUser = {
-                    email: users.email
+                    email: user.email
                 }
                 
-                console.log(users);
+                console.log(user);
 
 
                 toast('User Created Successfully.')
                 const userInfo = {
-                    displayName: users.name
+                    displayName: user.name
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(users.name, users.email);
+                        saveUser(user.name, user.email, user);
                     })
                     .catch(err => console.log(err));
             })
@@ -67,14 +67,14 @@ const GoogleLogin = () => {
                            })
     }
 
-    const saveUser = (name, email, user) =>{
-        const user1 ={name, email, user};
+    const saveUser = (name, email, role) =>{
+        const user ={name, email, role};
         fetch('https://assignment-hero-twelfth-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(user1)
+            body: JSON.stringify(user)
         })
         .then(res => res.json())
         .then(data =>{

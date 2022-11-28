@@ -3,6 +3,7 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import pic5 from '../../../assets/images/pic5.jpg';
 import verify from '../../../assets/images/verify.png';
+import Loading from '../../Shared/Loading/Loading';
 
 
 const AllSellers = () => {
@@ -13,7 +14,7 @@ const AllSellers = () => {
 
 
     
-    const {data: users = [], refetch} = useQuery({
+    const {data: users = [],isLoading, refetch} = useQuery({
         queryKey: ['users'],
         queryFn: async() =>{
             const res = await fetch('https://assignment-hero-twelfth-server.vercel.app/sellers');
@@ -76,7 +77,13 @@ const AllSellers = () => {
               refetch();
           }
       })
-  }
+  } 
+  
+  if (isLoading) {
+    return <Loading></Loading>
+}
+
+
 
     return (
         <div>

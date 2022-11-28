@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useToken from '../../hooks/useToken';
-import GoogleLogin from './GoogleLogin';
+
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();

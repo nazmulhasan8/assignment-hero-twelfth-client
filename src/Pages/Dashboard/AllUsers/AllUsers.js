@@ -1,8 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import Loading from '../../Shared/Loading/Loading';
 
 const AllUsers = () => {
-    const {data: users = [], refetch} = useQuery({
+    const {data: users = [],isLoading, refetch} = useQuery({
         queryKey: ['users'],
         queryFn: async() =>{
             const res = await fetch('https://assignment-hero-twelfth-server.vercel.app/users');
@@ -43,6 +44,9 @@ const AllUsers = () => {
       })
   }
 
+  if (isLoading) {
+    return <Loading></Loading>
+}
 
 
     return (

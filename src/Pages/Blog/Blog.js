@@ -26,7 +26,7 @@ In many cases, a lot of major parts of our application rely upon accessing URL s
         </div>
         <div className="card card-compact text-3xl w-100 bg-base-100 my-20 shadow-xl">
             <h2 className="card-title text-3xl justify-center">
-           2.  How does prototypical inheritancework?
+           2.  How does prototypical inheritance work?
 
                 
             </h2>

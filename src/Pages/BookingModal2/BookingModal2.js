@@ -67,15 +67,15 @@ const BookingModal2 = ({ itemValue, setItemValue, selectedDate2, refetch }) => {
     return (
         <>
             <input type="checkbox" id="booking-modal2" className="modal-toggle" />
-            <div className="modal">
+            <div className="modal bg-purple-300">
                 <div className="modal-box relative">
                     <label htmlFor="booking-modal2" className="btn btn-sm btn-circle absolute left-0 top-2 sticky ">✕</label>
-                    <h3 className="text-lg font-bold">{title}</h3>
+                    <h3 className="text-lg font-bold ">{title}</h3>
 
   
             
             <figure><img src={img} alt="pic" /></figure>
-            <div className="card-body w-100">
+            <div className="card-body bg-purple-300 w-100">
 
             {
                                         resalePrice && !paid && <Link

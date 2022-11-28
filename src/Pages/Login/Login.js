@@ -66,7 +66,7 @@ const Login = () => {
                     </div>
                 </form>
                 <p>New to Our Site <Link className='text-secondary' to="/signup">Create new Account</Link></p>
-                <div className="divider">OR</div>
+                <div className="divider"></div>
               
             </div>
         </div>

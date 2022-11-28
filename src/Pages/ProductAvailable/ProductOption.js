@@ -65,7 +65,7 @@ const handleReportProduct = productValue => {
 }
 
     return (
-<div className="card card-compact w-96 bg-base-100 shadow-xl">
+<div className="card card-compact w-96 bg-fuchsia-200 shadow-xl">
            
             <figure><img src={img} alt="missing" /></figure>
 
